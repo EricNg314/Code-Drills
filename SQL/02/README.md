@@ -1,6 +1,6 @@
 # Gotta Query Em' All
 
-Do you want to be the very best? That no one ever was? To cath them all, is your real test. To query them is our cause. You will travel across the csvs, searching for and wide. Each Pokemon to understand, the power that's inside! POKEMON gotta query em all!
+Do you want to be the very best? That no one ever was? To catch them all, is your real test. To query them is our cause. You will travel across the csvs, searching for and wide. Each Pokemon to understand, the power that's inside! POKEMON gotta query em all!
 
 *ahem* In this code drill you will get more practice importing a csv into MySQL and performing various queries.
 
