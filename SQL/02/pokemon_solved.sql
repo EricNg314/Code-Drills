@@ -1,3 +1,10 @@
+-- Drops the pokemon_db if it already exists --
+DROP DATABASE IF EXISTS pokemon_db;
+-- Create a database called programming_db --
+CREATE DATABASE pokemon_db;
+-- Use the database
+USE pokemon_db;
+
 -- Delete all the weak links.
 DELETE FROM pokemon_db.pokemon WHERE Total < 500;
 
