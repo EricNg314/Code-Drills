@@ -1,6 +1,8 @@
 # 2 SQL 2 SCHEMA - The CRUDy SQL sequel
 
-Hollywood is known for their sequels. But which ones actually lived up to their predecessor? You decide! In this activity we will be creating a database and adding tables with movies that have sequel. Your task is to find movies with sequel and rate them. This is meant to help exercise your SQL schema writing powers.
+Hollywood is known for their sequels. But which ones actually lived up to their predecessor? You decide! In this activity we will be creating a database and adding tables with movies that have sequel. Your task is to find movies with sequel and rate them. 
+
+This is meant to help exercise your SQL schema writing powers and get more practice with CRUD. Start to love and learn CRUD or you will have a _crudy_ experience with SQL!
 
 ## Instructions
 
@@ -17,10 +19,6 @@ Display the table after each change
 * Modify your table and change the `thumbs up` column with `true` where the rating is greater than 75.
 * Add an extra column to your table called `better than the og` that takes a boolean and represents... well was it better than the original?
 * Add in whether you think the movie was better than the original into this column
-* Delete all movies that you don't like or aren't better than the original
+* Delete all movies that you don't like OR aren't better than the original
 
 You now have a table of the best sequels ever. Grats!
-
-## Hints
-
-Look into CRUD and what it stands for. Start to love and learn CRUD or you will have a _crudy_ experience with SQL!
