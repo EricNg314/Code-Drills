@@ -1,5 +1,5 @@
 # Garage With Many Cars
-In the following exercise, we'll be create a sql database that includes two tables with a garage and cars associated to a particular garage.
+In the following exercise, we'll be creating a sql database that includes two tables with a garage and cars associated to a particular garage.
 
 
 # Includes:
