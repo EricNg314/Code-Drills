@@ -1,6 +1,8 @@
 # Oppan CSS Style
 
-Heeeeeeey, sassy lady! In this exercise you will get more experience styling HTML content using CSS. Become a worldwide sensation after perfecting your CSS skills to the max. You will be given and very bland and boring HTML page and will need to spruce it up. 
+Heeeeeeey, sassy lady! I'm sure everyone remembers the South Korean viral dance craze from 2012. No? Just me? Ok. What Despacito passed it as most viewed?? Anyways...
+
+In this exercise you will get more experience styling HTML content using CSS. Become a worldwide sensation after perfecting your CSS skills to the max. You will be given and very bland and boring HTML page and will need to spruce it up, give it some `gangnam style`
 
 ## Instructions
 
