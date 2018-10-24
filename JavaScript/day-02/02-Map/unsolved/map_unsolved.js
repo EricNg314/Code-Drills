@@ -53,7 +53,7 @@ var gummyBearFlavors = [{
 // create a function that console logs "my favorite gummy bear flavor is <flavor>" for each item in the array.
 
 
-// create a function that returns a string that looks like "<number>. <flavor> gummy bears are <color>." for each item in the array.
+// create a function that returns a string that looks like "<number>. <flavor> gummy bears are <color>." for each item in the array. console log the function
 
 
 // create a function that checks whether an item in the array has flavors that are either red or yellow and pushes them to new arrays called redFlavor and yellowFlavor.
