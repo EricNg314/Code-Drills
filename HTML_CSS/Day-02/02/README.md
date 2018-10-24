@@ -28,6 +28,7 @@ Once you are done it should look a little something like this:
 Congrats! You have recreated the horrific destruction of the dinosaurs.
 
 ## Tips and Tricks
+
 CSS position is usually foreign to most developers and some consider it *alien*. The trick is really just to play around with the values and percentages until it shows up where you want it on the screen.
 
 Your end result doesn't need to 100% match the provided example! So have fun and play around with the positioning.
