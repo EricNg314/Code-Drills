@@ -1,0 +1,9 @@
+/* Add borders to table's body, header, and data */
+td, th, tbody {
+  border: 1px solid black;
+}
+
+form {
+  display: inline-block;
+  border: 2px solid black;
+}
