@@ -48,20 +48,10 @@ var gabumon = {
 // Use chaining to create another new element and set its text as "Omnimon"
 
 
-// Select the div with an id of "agumon" and append a new <img> element using this image "https://vignette.wikia.nocookie.net/digimon/images/6/68/Agumon_b.jpg/revision/latest?cb=20170210150934"
+// Select the div with an id of "agumon" and append a new <img> element
 
 
-// select the div with an id of gabumon
-
-
-// append a new <img> element to the gabumon div using this image https://vignette.wikia.nocookie.net/digimon/images/d/d1/Gabumon_b.jpg/revision/latest?cb=20171127121438
-
-
-// append a new <ul> element to the div
-
-// Using the gabumon object, append <li> elements to the new <ul>. There should be a new list item for each digivolution name
-
-// Select all list items, then change their font color
+// Challenge section!
 
 
 
