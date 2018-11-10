@@ -21,12 +21,12 @@
       <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get States!</a>
     </div>
 
-    {% for state_info in states_info%}
+    {% for state_article in state_news%}
     <div class="col-lg-4">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title text-center">{{state_info.state}}</h4>
-          <p class="card-text mb-2 text-muted">{{ state_info.capital }}</p>
+          <h4 class="card-title text-center">{{state_article.title}}</h4>
+          <p class="card-text mb-2 text-muted">{{ state_article.url_link }}</p>
         </div>
       </div>
     </div>
