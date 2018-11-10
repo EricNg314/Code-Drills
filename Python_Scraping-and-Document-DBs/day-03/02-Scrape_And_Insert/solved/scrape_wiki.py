@@ -16,7 +16,33 @@ def scrape_states():
   browser = init_browser()
   
   # Set your url to the list of states and territories of United States in wikipedia.org
-  url = "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+  url = "https://www.nytimes.com/search?query=california"
   browser.visit(url)
 
-  return "test"
+  html = browser.html
+  soup = BeautifulSoup(html, "html.parser")
+
+  states_info = []
+  # info = soup.find_all('hr', class=Item-headline-'')
+
+  for title in soup.select('li[class*="SearchResults-item"]'):
+    # print(title.find('a').attr('href'))
+    print('-------------------------')
+    print(title.find('a').attr('href'))
+
+
+  # for row in table.findAll("tr"):
+  #   state = {}
+  #   print('====================================')
+  #   print(row)
+  #   for data in row:
+  #     state['info'] = data.find('td')
+  #     print('------------------------------------------')
+  #     print(state)
+
+
+
+  # print(table)
+
+
+  return states_info

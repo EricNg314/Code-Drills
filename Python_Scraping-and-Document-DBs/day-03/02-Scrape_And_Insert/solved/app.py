@@ -19,13 +19,19 @@ def home():
     "capital":"Sacramento"
     }
   ]
-
-  return render_template("index.html", states_info = states_info)
+  states = scrape_wiki.scrape_states()
+  print(states)
+  return render_template("test.html", states = states)
+  # return render_template("index.html", states_info = states_info)
 
 @app.route("/scrape")
 def scrape():
   states = scrape_wiki.scrape_states()
   print(states)
+
+  # mongo.db.collection.update({}, states, upsert=True)
+
+
   return redirect("/", code=302)
 
 if __name__ == "__main__":
