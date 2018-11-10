@@ -10,12 +10,12 @@ def init_browser():
   executable_path = {"executable_path": "chromedriver"}
   return Browser("chrome", **executable_path, headless=False)
 
-# Function to scrape for states in States Wiki
+# Function to scrape for a state from nytimes
 def scrape_states():
   # Initialize browser by calling on your init_browser function.
   browser = init_browser()
   
-  # Set your url to the list of states and territories of United States in wikipedia.org
+  # Set your url to the 'https://www.nytimes.com/search?query=california'
   url = "https://www.nytimes.com/search?query=california"
   browser.visit(url)
 
