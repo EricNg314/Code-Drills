@@ -24,10 +24,32 @@ var svg = d3.select("body")
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
-// Load data from hours-of-tv-watched.csv
+// Load data from heights_of_rollercoasters.csv
 d3.csv("heights_of_rollercoasters.csv", function(error, coasterData) {
   if (error) throw error;
 
+  //sort data by tallest to shortest
+  function byHeight(a,b){
+    if (a.height > b.height){
+      return -1;
+    }
+    if (a.height < b.height){
+      return 1;
+    }
+    return 0;
+  }
+  //sort data alphabetically by name
+  function byName(a,b){
+    if (a.rollercoaster < b.rollercoaster){
+      return -1;
+    }
+    if (a.rollercoaster > b.rollercoaster){
+      return 1;
+    }
+    return 0;
+  }
+
+  coasterData.sort(byName);
   console.log(coasterData);
 
   // Cast the hours value to a number for each piece of coasterData
