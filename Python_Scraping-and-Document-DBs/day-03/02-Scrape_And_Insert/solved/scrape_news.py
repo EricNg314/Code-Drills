@@ -22,27 +22,19 @@ def scrape_states():
   html = browser.html
   soup = BeautifulSoup(html, "html.parser")
 
-  states_info = []
-  # info = soup.find_all('hr', class=Item-headline-'')
+  state_news = []
 
-  for title in soup.select('li[class*="SearchResults-item"]'):
-    # print(title.find('a').attr('href'))
-    print('-------------------------')
-    print(title.find('a').attr('href'))
+  # Selecting all news list elements to retrieve title and url.
+  for list_element in soup.select('li[class*="SearchResults-item"]'):
 
+    title = list_element.find('h4').get_text()
+    url_link = f"https://www.nytimes.com{list_element.find('a')['href']}"
 
-  # for row in table.findAll("tr"):
-  #   state = {}
-  #   print('====================================')
-  #   print(row)
-  #   for data in row:
-  #     state['info'] = data.find('td')
-  #     print('------------------------------------------')
-  #     print(state)
+    data = {
+      'title': title,
+      'url_link': url_link
+    }
 
+    state_news.append(data)
 
-
-  # print(table)
-
-
-  return states_info
+  return state_news
