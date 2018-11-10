@@ -21,17 +21,20 @@
       <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get States!</a>
     </div>
 
+    <h3>California News</h3>
     {% for state_article in state_news%}
-    <div class="col-lg-4">
-      <div class="card">
+    <div class="row">
+      <!-- <div class="col-4"> -->
+      <div class="card w-100">
         <div class="card-body">
-          <h4 class="card-title text-center">{{state_article.title}}</h4>
-          <p class="card-text mb-2 text-muted">{{ state_article.url_link }}</p>
+          <!-- <h4 class="card-title text-center">{{state_article.title}}</h4> -->
+          <!-- <p class="card-text mb-2 text-muted">{{ state_article.url_link }}</p> -->
+          <a href="{{ state_article.url_link }}">{{state_article.title}}</a>
         </div>
       </div>
+      <!-- </div> -->
     </div>
     {% endfor %}
-
   </div>
 
 
