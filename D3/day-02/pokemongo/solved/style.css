@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.mystic {
+  fill: none;
+  stroke: blue;
+  stroke-width: 2px;
+}
+
+.valor {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+
+.instinct {
+  fill: none;
+  stroke: yellow;
+  stroke-width: 2px;
+}
