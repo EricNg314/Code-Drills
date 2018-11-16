@@ -17,7 +17,7 @@ In this activity we will hone the powers of your google fu and become a search e
 
 * Create a new markdown files to keep track of what you search
 * Each prompt will give you a situation that needs to be addressed or fixed. What would you search to remedy these prompts?
-* Write down your search queries for each prompt and pick a few of the returned search results links after scanning them
+* Write down your search queries for each prompt and pick a few of the returned search results after scanning them
 
 ## What would you Google if...
 
@@ -45,5 +45,5 @@ In this activity we will hone the powers of your google fu and become a search e
 
 ## Remember!
 
-* There are no right or wrong answers, the point of this activity is to get you to actively google and actually read through the links. The first link is not always the best link, sometimes you have to dig a little to find the gold :)
+* There are no right or wrong answers, the point of this activity is to get you to actively google and actually read through the search results. The first result may not always provide the best answer, sometimes you have to dig a little to find the gold :)
 
