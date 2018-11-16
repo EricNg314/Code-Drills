@@ -24,8 +24,6 @@ var svg = d3.select("body")
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Configure a parseTime function which will return a new Date object from a string
-var parseTime = d3.timeParse("%B");
 
 // Load data from pokemon_go.csv
 d3.csv("pokemon_go.csv", function(error, pokemonData) {
@@ -33,18 +31,17 @@ d3.csv("pokemon_go.csv", function(error, pokemonData) {
   // Throw an error if one occurs
   if (error) throw error;
 
-
-  // Format the date and cast the miles value to a number
+  // Format the data as numbers for each team
   pokemonData.forEach(function(data) {
     data.mystic = +data.mystic;
     data.valor = +data.valor;
     data.instinct = +data.instinct;
   });
 
-    // Print the milesData
+    // Print the pokemonData
     console.log(pokemonData);
 
-   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
+   // Configure a band scale for the horizontal axis with a padding of 1
   var xBandScale = d3.scaleBand()
     .range([0, chartWidth])
     .domain(pokemonData.map(d => d.communityDay))
@@ -61,7 +58,7 @@ d3.csv("pokemon_go.csv", function(error, pokemonData) {
   var bottomAxis = d3.axisBottom(xBandScale);
   var leftAxis = d3.axisLeft(yLinearScale);
 
-  // Configure a drawLine function which will use our scales to plot the line's points
+  // Configure drawLine functions for each of the team
   var mysticLine = d3
     .line()
     .x(data => xBandScale(data.communityDay))
@@ -77,17 +74,14 @@ d3.csv("pokemon_go.csv", function(error, pokemonData) {
     .x(data => xBandScale(data.communityDay))
     .y(data => yLinearScale(data.instinct));
 
-  // Append an SVG path and plot its points using the line function
+  // Append an SVG path and plot its points using the line function and give each plot its appropriate class
   chartGroup.append("path")
-    // The mysticLine function returns the instructions for creating the line for milesData
     .attr("d", mysticLine(pokemonData))
     .classed("mystic", true);
   chartGroup.append("path")
-    // The mysticLine function returns the instructions for creating the line for milesData
     .attr("d", valorLine(pokemonData))
     .classed("valor", true);
   chartGroup.append("path")
-    // The mysticLine function returns the instructions for creating the line for milesData
     .attr("d", instinctLine(pokemonData))
     .classed("instinct", true);
 
