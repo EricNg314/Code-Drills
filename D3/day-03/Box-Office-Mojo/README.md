@@ -1,0 +1,3 @@
+# Box Office Success!
+
+2018 has been a great year for the film industry with a series of record breaking opening and worldwide grosses. This summer `Avengers: Infinity War` became just the 4th film in history to pass $2 billion in total gross. `The Incredibles 2` broke numerous opening week records for an animated film, and `Black Panther` became the 3rd film in US history to pass 700 million domestically.

@@ -1,55 +1,58 @@
-#hairmetal {
-  border-radius: 8px;
+body{
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .chart::before {
   position: absolute;
-  top: 50px;
-  left: 300px;
   z-index: -1;
   display: block;
-  width: 400px;
-  height: 300px;
+  top: 20px;
+  left: 120px;
+  width: 800px;
+  height: 400px;
   content: " ";
   background-image: url("maxresdefault.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .tooltip {
   position: absolute;
   width: 135px;
-  height: 60px;
+  height: 80px;
   padding: 2px;
-  padding-top: 8px;
+  padding-top: 15px;
   font: 12px sans-serif;
   color: white;
   text-align: center;
-  background: #551aaf;
+  background: #83667f;
   border: 0;
   border-radius: 10px;
+  z-index: 9999;
+  pointer-events: none; 
 }
 
 .axis-text {
   font-family: sans-serif;
   font-weight: bold;
-  fill: #551aaf;
+  fill: #229f82;
   text-anchor: middle;
 }
 
 .active {
   font-weight: bold;
   fill: #000;
-  fill: #551aaf;
+  fill: #229f82;
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
 
 .inactive {
   font-weight: lighter;
-  fill: #551aaf;
+  fill: #4a9688;
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
