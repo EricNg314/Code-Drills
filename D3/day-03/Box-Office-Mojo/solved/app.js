@@ -135,14 +135,14 @@ d3.csv("boxOffice.csv", function(err, boxOffice) {
   var labelsGroup = chartGroup.append("g")
     .attr("transform", `translate(${width / 2}, ${height + 20})`);
 
-  var hairLengthLabel = labelsGroup.append("text")
+  var domesticLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 20)
     .attr("value", "domestic") // value to grab for event listener
     .classed("active", true)
     .text("Domestic Gross (in Hundred Millions)");
 
-  var albumsLabel = labelsGroup.append("text")
+  var overseasLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 40)
     .attr("value", "overseas") // value to grab for event listener
@@ -187,19 +187,19 @@ d3.csv("boxOffice.csv", function(err, boxOffice) {
         circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
 
         // changes classes to change bold text
-        if (chosenXAxis === "num_albums") {
-          albumsLabel
+        if (chosenXAxis === "overseas") {
+          overseasLabel
             .classed("active", true)
             .classed("inactive", false);
-          hairLengthLabel
+          domesticLabel
             .classed("active", false)
             .classed("inactive", true);
         }
         else {
-          albumsLabel
+          overseasLabel
             .classed("active", false)
             .classed("inactive", true);
-          hairLengthLabel
+          domesticLabel
             .classed("active", true)
             .classed("inactive", false);
         }
