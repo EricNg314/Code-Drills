@@ -1,4 +1,5 @@
 
+//========================= Chart 1 =====================================
 let data ={
   date: [],
   gdp: []
@@ -9,23 +10,19 @@ realGDP.forEach((quarterlyGDP) =>{
   data['gdp'].push(quarterlyGDP['GDPC1']);
 })
 
-
-
-let chart1Trace = {
+const chart1Trace = {
   x: data['date'],
   y: data['gdp'],
-  type: "scatter",
+  // type: "scatter",
   name: "GDP",
   marker: {
-    color:"blue"
-    // symbol: "diamond-x"
+    color:"grey"
   }
 };
 
+const chartData = [chart1Trace];
 
-let chartData = [chart1Trace];
-
-let chart1Layout = {
+const chart1Layout = {
   title: "US Quarterly Real GDP",
   xaxis: {
     title: "Year"
@@ -37,54 +34,39 @@ let chart1Layout = {
 
 Plotly.newPlot("plotID1", chartData, chart1Layout);
 
-//================= Chart 2 =====================================
-
+//========================= Chart 2 =====================================
 const length = data['date'].length;
 
-let test = data['date'].slice(1,2);
-let date3 = data['date'].slice(length - 10, length)
-let gdp3 = data['gdp'].slice(length - 10, length)
+const date2 = data['date'].slice(length - 10, length)
+const gdp2 = data['gdp'].slice(length - 10, length)
 
-let data3 ={
-  date: date3,
-  gdp: gdp3
+const data2 ={
+  date: date2,
+  gdp: gdp2
 }
 
-realGDP.forEach((quarterlyGDP) =>{
-  data3['date'].push(quarterlyGDP['DATE']);
-  data3['gdp'].push(quarterlyGDP['GDPC1']);
-})
-
-
-
-let chart2Trace1 = {
-  x: data3['date'],
-  y: data3['gdp'],
+const chart2Trace = {
+  x: data2['date'],
+  y: data2['gdp'],
   type: "scatter",
+  mode: "lines+markers",
   name: "GDP",
   marker: {
-    color:"blue"
-    // symbol: "diamond-x"
+    color:"red",
+    size: 20,
+    symbol: "x",
+    opacity: 0.4
+  },
+  line: {
+    color: 'rgb(0,0,255)',
+    width: 3,
+    dash: 'dot'
   }
 };
 
+const chartData2 = [chart2Trace];
 
-let chart2Trace2 = {
-  x: data3['date'],
-  y: data3['gdp'],
-  mode: "markers",
-  type: "scatter",
-  name: "GDP",
-  marker: {
-    color:"orange",
-    symbol: "diamond-x"
-  }
-};
-
-
-let chartData2 = [chart2Trace1, chart2Trace2];
-
-let chart2Layout = {
+const chart2Layout = {
   title: "US Quarterly Real GDP",
   xaxis: {
     title: "Year"
@@ -95,7 +77,3 @@ let chart2Layout = {
 }
 
 Plotly.newPlot("plotID2", chartData2, chart2Layout);
-
-
-
-
