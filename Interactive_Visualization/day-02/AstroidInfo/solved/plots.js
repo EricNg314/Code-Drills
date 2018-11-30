@@ -122,16 +122,6 @@ function buildPlots(name, dates, distances, velocity) {
 }
 
 
-// // BONUS - Dynamically add the current date to the report header
-// var monthNames = [
-//   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-//   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-// var today = new Date();
-// var date = `${monthNames[today.getMonth()]} ${today.getFullYear().toString().substr(2, 2)}`;
-
-// d3.select("#report-date").text(date);
-
-
 
 
 
