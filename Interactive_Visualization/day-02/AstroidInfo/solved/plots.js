@@ -3,8 +3,9 @@
 var apiKey = "";
 
 // Pick an asteroid ID(neo_reference_id) of your choice! 
-// Open the below url in your browser to retrieve an example list of asteroids given a time period.
-// https://api.nasa.gov/neo/rest/v1/feed?start_date=2018-09-07&end_date=2018-09-08&api_key=${apiKey}
+  // Open the below url in your browser to retrieve an example list of asteroid's info given a time period.
+  // https://api.nasa.gov/neo/rest/v1/feed?start_date=2018-09-07&end_date=2018-09-08&api_key=${apiKey}
+      // Replace ${apiKey} with your apiKey retrieved earlier and review the response output.
 var asteroidID = "3542519";
 
 function parseData(data) {
@@ -14,9 +15,9 @@ function parseData(data) {
     distances: [],
     velocity: []
   }
-  console.log(data)
 
   data.forEach(function (observation) {
+
     if (observation.orbiting_body === "Earth") {
       parsed.dates.push(observation.close_approach_date)
       parsed.orbiting_body.push(observation.orbiting_body)
@@ -39,7 +40,7 @@ function getAsteroidData() {
     var orbiting_body = parsed.orbiting_body;
     var distances = parsed.distances;
     var velocity = parsed.velocity;
-    console.log(name)
+
     document.getElementById('asteroidNameId').innerHTML = name;
 
     if (hazardous === true) {
@@ -57,7 +58,7 @@ function buildTable(dates, orbiting_body, distances, velocity) {
   var table = d3.select("#summary-table");
   var tbody = table.select("tbody");
   var trow;
-  for (var i = 0; i < 12; i++) {
+  for (var i = dates.length -1; i >= 0; i--) {
     trow = tbody.append("tr");
     trow.append("td").text(dates[i]);
     trow.append("td").text(orbiting_body[i]);
@@ -67,7 +68,7 @@ function buildTable(dates, orbiting_body, distances, velocity) {
 }
 
 function buildPlots(name, dates, distances, velocity) {
-
+  // =================== Adding first plot ==========================
   var trace1 = {
     x: dates,
     y: distances,
@@ -76,57 +77,67 @@ function buildPlots(name, dates, distances, velocity) {
     name: "Distance",
     marker: {
       color: "red",
-      size: 20,
+      size: 5,
       symbol: "x",
       opacity: 0.4
     },
     line: {
       color: 'rgb(0,0,255)',
-      width: 3,
+      width: 0.5,
       dash: 'dot'
     }
   };
 
-  var trace2 = {
-    mode: "line",
-    x: dates,
-    y: velocity,
-    name: "Velocity",
-    yaxis: "y2",
-    line: {
-      color: 'rgb(0,255,0)',
-      width: 3,
-      dash: 'solid'
-    }
-  };
 
-  // var data = [trace1, trace2];
   var data = [trace1];
   var layout = {
-    title: `Distance and Velocity By Date ${name}`,
+    title: `Distance By Date ${name}`,
     xaxis: {
       title: "Date"
     },
     yaxis: {
-      title: "Distance"
+      title: "Distance(km)"
     },
-    yaxis2: {
-      title: "Velocity",
-      side: 'right'
+    showlegend: true
+  };
+  
+
+  Plotly.newPlot("plot", data, layout);
+
+  // =================== Adding second plot ==========================
+  var trace2 = {
+    x: dates,
+    y: velocity,
+
+    mode: "lines+markers",
+    name: "Velocity",
+    marker: {
+      color: "blue",
+      size: 5,
+      symbol: "circle",
+      opacity: 0.4
+    },
+    line: {
+      color: 'rgb(0,255,0)',
+      width: 0.5,
+      dash: 'dot'
+    }
+  };
+
+  var data2 = [trace2];
+  var layout2 = {
+    title: `Velocity By Date ${name}`,
+    xaxis: {
+      title: "Date"
+    },
+    yaxis: {
+      title: "Velocity(km)"
     },
     showlegend: true
   };
 
-  Plotly.newPlot("plot", data, layout);
 
+  Plotly.newPlot("plot2", data2, layout2);
 }
 
-
-
-
-
-
-
 getAsteroidData();
-
-
