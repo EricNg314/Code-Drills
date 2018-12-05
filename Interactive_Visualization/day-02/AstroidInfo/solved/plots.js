@@ -8,6 +8,12 @@ var apiKey = "";
       // Replace ${apiKey} with your apiKey retrieved earlier and review the response output.
 var asteroidID = "3542519";
 
+
+// ======================= BEGIN Function parseData ==================================
+// This function should parse the data output from your api query.
+  // Should then return an object with each of the following keys and value as an array.
+    // "dates", "orbiting_body", "distances", "velocity"
+// Suggestion: Create this function when you have reviewed your api's result. 
 function parseData(data) {
   var parsed = {
     dates: [],
@@ -16,8 +22,8 @@ function parseData(data) {
     velocity: []
   }
 
+  // For each row of data, add data to "parsed" if it's related to "Earth"
   data.forEach(function (observation) {
-
     if (observation.orbiting_body === "Earth") {
       parsed.dates.push(observation.close_approach_date)
       parsed.orbiting_body.push(observation.orbiting_body)
@@ -28,11 +34,15 @@ function parseData(data) {
 
   return parsed
 }
+// ======================= END Function parseData ==================================
 
+// ======================= BEGIN Function getAsteroidData ==================================
 function getAsteroidData() {
-
   var queryUrl = `https://api.nasa.gov/neo/rest/v1/neo/${asteroidID}?api_key=${apiKey}`;
+  
+  // Using d3, get the json data from the below url and retrieve the following information:
   d3.json(queryUrl).then(function (data) {
+    // Retrieve "name", "hazardous", "parsed", "dates", "orbiting_body", "distances", and "velocity"
     var name = data.name;
     var hazardous = data.is_potentially_hazardous_asteroid;
     var parsed = parseData(data.close_approach_data)
@@ -41,20 +51,31 @@ function getAsteroidData() {
     var distances = parsed.distances;
     var velocity = parsed.velocity;
 
+    // Update the html element id "asteroidNameId" with the name retrieved above.
     document.getElementById('asteroidNameId').innerHTML = name;
 
+    // OPTIONAL: add a check if the asteroid is hazardous and 
+      // update the HTML element id "asteroidInfoId" with a message stating whether it's dangerous.
     if (hazardous === true) {
       document.getElementById('asteroidInfoId').innerHTML = `Asteroid ${name} is potentially hazardous, thus we want to see the trend as it gets closer and predict it's potential arrival.`;
     } else {
       document.getElementById('asteroidInfoId').innerHTML = `Asteroid ${name} is not hazardous, but it's nice to keep track of this lovely rock.`;
     }
 
+    // Execute the functions "buildTable" and "buildPlots"
     buildTable(dates, orbiting_body, distances, velocity);
     buildPlots(name, dates, distances, velocity);
   });
 }
 
+// ======================= END Function getAsteroidData ==================================
+
+// ======================= BEGIN Function buildTable ==================================
+
 function buildTable(dates, orbiting_body, distances, velocity) {
+  // buildTable function should take in "dates", "orbiting_body", "distances", and "velocity" as arguments
+  // Using d3 append the information to your html table body as "td" elements (NOTE: table has an element id of "summary-table").
+    // Added from latest to earliest date.
   var table = d3.select("#summary-table");
   var tbody = table.select("tbody");
   var trow;
@@ -66,9 +87,13 @@ function buildTable(dates, orbiting_body, distances, velocity) {
     trow.append("td").text(velocity[i]);
   }
 }
+// ======================= END Function buildTable ==================================
 
+// ======================= BEGIN Function buildPlots ==================================
 function buildPlots(name, dates, distances, velocity) {
-  // =================== Adding first plot ==========================
+  // buildPlots function should take in "name", "dates", "distances", and "velocity" as arguments
+  // =================== Adding plot 1 ==========================
+    // Create your trace and layout, then plot onto HTML element id "plot".
   var trace1 = {
     x: dates,
     y: distances,
@@ -104,7 +129,8 @@ function buildPlots(name, dates, distances, velocity) {
 
   Plotly.newPlot("plot", data, layout);
 
-  // =================== Adding second plot ==========================
+  // =================== Adding plot 2 ==========================
+    // Create your trace and layout, then plot onto HTML element id "plot2".
   var trace2 = {
     x: dates,
     y: velocity,
@@ -139,5 +165,7 @@ function buildPlots(name, dates, distances, velocity) {
 
   Plotly.newPlot("plot2", data2, layout2);
 }
+// ======================= END Function buildPlots ==================================
 
+// Execute your function "getAsteroidData" created earlier inorder to plot info.
 getAsteroidData();
