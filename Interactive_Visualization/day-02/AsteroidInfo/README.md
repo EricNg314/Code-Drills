@@ -5,8 +5,9 @@ Maybe you can help give everyone some relief by providing visual data about your
 
 ## Instructions
 1. First check out the pdf example to get an idea of your output. [AsteroidInfo_example.pdf](AsteroidInfo_example.pdf)
-2. We've provided you the [index.html](unsolved/index.html), take a look and get familiar with the output.
+2. We've provided you the [index.html](unsolved/index.html), take a look and get familiar with the layout.
 3. Jump into the [plots.js](unsolved/plots.js). 
    * You'll have instructions to obtain an api key from NASA.
-   * We've also provided some empty functions for you to fill.
+   * Using the api key, you'll be making a query for a random asteroid of your choosing.
+   * We've also provided some empty functions for you to fill as a starter template.
 
