@@ -13,7 +13,7 @@ function createFeatures(volcanoData) {
   // Give each feature a popup describing the place and time of the volcano
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.V_Name +
-      "</h3><hr><p> Volcanic Explosivity Index" + feature.properties.VEI_Holoce + "</p>");
+      "</h3><hr><p> Volcanic Explosivity Index: " + feature.properties.VEI_Holoce + "</p>");
   }
 
   // Create a GeoJSON layer containing the features array on the volcanoData object
@@ -60,7 +60,7 @@ function createMap(volcanos) {
       35.68, 139.69
     ],
     zoom: 5,
-    layers: [streetmap, volcanos]
+    layers: [satellite, volcanos]
   });
 
   // Create a layer control
