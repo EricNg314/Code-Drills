@@ -11,17 +11,30 @@
     <title>Whale Sightings!</title>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1 class="display-4">Whale Sightings!</h1>
-      <p class="lead">Find whale locations near you!</p>
-      <hr class="my-4">
-      <p>Checkout the past 3 years recorded whale sightnings.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h2>All The Whales!</h2>
-        <div id="plot"></div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Whale Sightings!</h1>
+        <p class="lead">Find whale locations near you!</p>
+        <small>Currently displaying only data between Seattle, WA and Vancouver, BC</small>
+        <hr class="my-4">
+        <p>Did you see a whale? Let others know!</p>
+        <form>
+            <div class="form-group">
+                <label for="inputLat">Whale Location Latitude</label>
+                <input type="text" class="form-control" id="inputLat" name="whaleLat" placeholder="Lat">
+            </div>
+            <div class="form-group">
+                <label for="inputLon">Whale Location Longitude</label>
+                <input type="text" class="form-control" id="inputLon" name="whaleLon" placeholder="Lon">
+            </div>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Add Whale</a>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>All The Whales!</h2>
+          <div id="plot"></div>
+        </div>
       </div>
     </div>
 
@@ -31,13 +44,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <script>
       // Checkout the below regarding passing a list into an html with javascript. (Issue due to jinja2 template.)
       // https://stackoverflow.com/questions/15321431/how-to-pass-a-list-from-python-by-jinja2-to-javascript
+      // var whale_list = {{ whale_list | safe }}
       var whale_list = {{ whale_list | safe }}
-
     </script>
-
 
     <script type='text/JavaScript' src='static/app.js'></script>
   </body>

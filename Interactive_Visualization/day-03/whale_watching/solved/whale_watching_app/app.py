@@ -31,9 +31,9 @@ def home():
   # Although we would like to use jsonify, we are going to use json.dumps. 
     # Checkout the link below to review the difference.
       # https://stackoverflow.com/questions/7907596/json-dumps-vs-flask-jsonify
+  # return render_template("index.html", whale_list = whale_query)
+  # return render_template("index.html", whale_list = jsonify(whale_query))
   return render_template("index.html", whale_list = json.dumps(whale_query))
-  # return render_template("index.html", whale_list = jsonify(whale_list))
-
 
 
 if __name__ == "__main__":
