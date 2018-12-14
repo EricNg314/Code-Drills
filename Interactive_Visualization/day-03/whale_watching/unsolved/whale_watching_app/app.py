@@ -42,17 +42,10 @@ def home():
 
 
 # TODO: Create a route to send information to your database from your frontend.
-@app.route('/send', methods=["GET","POST"])
-def send():
-  if request.method == "POST":
-    whale_info= {
-      "latitude": request.form["whaleLat"],
-      "longitude": request.form["whaleLon"],
-      "description": request.form["whaleDes"]
-    }
-    data_query.post_whale_info(mongo, whale_info)
+
+
     # TODO: Once you've made your post, redirect the user back to the root route.
-  return redirect("/", code=302)
+
 
 
 if __name__ == "__main__":
