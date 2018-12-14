@@ -35,6 +35,18 @@ def home():
   # return render_template("index.html", whale_list = jsonify(whale_query))
   return render_template("index.html", whale_list = json.dumps(whale_query))
 
+@app.route('/send', methods=["GET","POST"])
+def send():
+  print("Entered Send route")
+  if request.method == "POST":
+    whale_info= {
+      "latitude": request.form["whaleLat"],
+      "longitude": request.form["whaleLon"],
+      "description": request.form["whaleDes"]
+    }
+    data_query.post_whale_info(mongo, whale_info)
+  return redirect("/", code=302)
+
 
 if __name__ == "__main__":
   app.run(debug=True)

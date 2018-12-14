@@ -22,3 +22,7 @@ def get_all_whales(mongo):
     whale_list.append(sighting)
   
   return whale_list
+
+def post_whale_info(mongo, whale_info):
+  mongo.db.whale_coll.insert_one(whale_info)
+
