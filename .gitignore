@@ -1,4 +1,6 @@
 .DS_Store
+node_modules
 config.py
 *.ipynb_checkpoints
 __pycache__/
+.env

@@ -8,7 +8,7 @@ This is meant to help exercise your SQL schema writing powers and get more pract
 
 * Create a new database called `sequel_db` this will be a database of movies that have sequels
 * Create a table called `movies_with_sequels` which includes a primary key `id` that auto increments
-* The table should include a column for the `name` of the movie and a `rating` score and a `thumbs up/down`. (You can call these columns whatever you like these are just suggestions)
+* The table should include a column for the `name` of the movie and a `rating` score ranging from 1-100 and a `thumbs up/down`. (You can call these columns whatever you like these are just suggestions)
 * The `thumbs up/thumbs down` column should take a boolean which defaults to `false` and represents whether you liked the movie or not
 * Insert data into your table only with the `title` and `rating`
   
