@@ -15,7 +15,7 @@
 
 <body>
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron bg-primary text-light">
       <h1 class="display-4">Whale Sightings!</h1>
       <p class="lead">Find whale locations near you!</p>
       <hr class="my-4">
@@ -37,13 +37,12 @@
             <textarea type="text" class="form-control" id="inputDes" name="whaleDes" placeholder="Description"></textarea>
           </div>
         </div>
-        <input type="submit" class="btn btn-primary btn-lg" value="Add Whale">
+        <input type="submit" class="btn btn-success btn-lg" value="Add Whale">
       </form>
     </div>
     <div class="row">
       <div class="col-12">
         <h2>All The Whales!</h2>
-        <!-- <small>Currently displaying only data between Seattle, WA and Vancouver, BC</small> -->
         <div id="plot"></div>
       </div>
     </div>
