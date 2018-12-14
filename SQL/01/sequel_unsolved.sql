@@ -1,6 +1,6 @@
--- Drops the programming_db if it already exists --
+-- Drops the sequel_db if it already exists --
 DROP DATABASE IF EXISTS sequel_db;
--- Create a database called programming_db --
+-- Create a database called sequel_db --
 CREATE DATABASE sequel_db;
 
 USE sequel_db;
