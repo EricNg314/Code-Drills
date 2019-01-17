@@ -16,7 +16,6 @@ hogwarts_students = [
 # Flask Setup
 #################################################
 # @TODO: Initialize your Flask app here
-# YOUR CODE GOES HERE
 app = Flask(__name__)
 
 #################################################
@@ -34,14 +33,13 @@ def hogwarts():
 
 # Create a root route that welcomes the user with all available routes. Create an API route for each house.
 
-## BONUS - look into HTML <a> tags and display the houses as a clickable link
 @app.route("/")
 def welcome():
     return (
         f"Welcome to the Hogwarts Students API!<br/>"
         f"Available Routes:<br/>"
         f"<a href='/api/v1.0/hogwarts-students'>Students</a><br/>"
-        f"<a href='/api/v1.0/hogwarts-students/house/griffindor'>Griffyndor</a><br/>"
+        f"<a href='/api/v1.0/hogwarts-students/house/gryffindor'>Gryffindor</a><br/>"
         f"<a href='/api/v1.0/hogwarts-students/house/ravenclaw'>Ravenclaw</a><br/>"
         f"<a href='/api/v1.0/hogwarts-students/house/hufflepuff'>Hufflepuff</a><br/>"
         f"<a href='/api/v1.0/hogwarts-students/house/slytherin'>Slytherin</a><br/>"
@@ -67,7 +65,7 @@ def hogwarts_houses(house):
         return jsonify(houses)
     # if the houses has no data return an error message
     if not houses:
-        return jsonify({"error": f"that house does not exist"}), 404
+        return jsonify({"error": f"No students are currently in this house"}), 404
 
 # Handle API route with a variable path that will allow getting info for a specific character based on their name
 @app.route("/api/v1.0/hogwarts-students/student/<name>")

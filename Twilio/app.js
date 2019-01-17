@@ -11,7 +11,7 @@ const accountSid = twilio.id;
 const authToken = twilio.secret;
 const client = require('twilio')(accountSid, authToken);
 
-const myNumber = '+15104152887'
+const myNumber = twilio.number;
 
 client.messages
   .create({
